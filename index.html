@@ -104,7 +104,7 @@
       const login = document.getElementById("login").value;
       const password = document.getElementById("password").value;
 
-      const res = await fetch("/login", {
+      const res = await fetch("https://lead-capture-app.vinetis.workers.dev/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ login, password }),
@@ -122,7 +122,7 @@
 
     async function checkLead() {
       const formData = getFormData();
-      const res = await fetch("/check", {
+      const res = await fetch("https://lead-capture-app.vinetis.workers.dev/check", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -136,7 +136,7 @@
 
     async function createLead() {
       const formData = getFormData();
-      const res = await fetch("/create", {
+      const res = await fetch("https://lead-capture-app.vinetis.workers.dev/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -155,7 +155,7 @@
     async function overrideLead() {
       const formData = getFormData();
       formData.override = true;
-      const res = await fetch("/create", {
+      const res = await fetch("https://lead-capture-app.vinetis.workers.dev/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
